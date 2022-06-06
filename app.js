@@ -1,10 +1,17 @@
-window.addEventListener("load", start);
+// window.addEventListener("load", start);
 
-function start() {
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then(() => console.log("service worker registered"))
-      .catch(() => console.log("Failed to register service worker"));
-  }
-}
+
+// function start() {
+//   if ("serviceWorker" in navigator) {
+
+//     registerServiceWorker();
+
+//   }
+// }
+
+// function registerServiceWorker() {
+//   navigator.serviceWorker
+//     .register("/sw.js")
+//     .then(() => console.log("Service worker installed"))
+//     .catch(() => console.log("Sevice Worker discarded"));
+// }
