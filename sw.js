@@ -1,5 +1,5 @@
 const resources = [
-  "/index.html",
+  "/",
   "/gallery/irene-1.jpg",
   "/gallery/irene-2.jpg",
   "/gallery/irene-4.jpeg",
