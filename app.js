@@ -1,20 +1,24 @@
-window.addEventListener("load", start);
+window.onload = main;
 
-
-function start() {
-
+async function main() {
   if ("serviceWorker" in navigator) {
+    try {
+      const registration = await navigator.serviceWorker.register(
+        "/sw.js",
+        {
+          scope: "/",
+        }
+      );
 
-    registerServiceWorker();
-
+      if (registration.installing) {
+        console.log("Service worker installing");
+      } else if (registration.waiting) {
+        console.log("Service worker installed");
+      } else if (registration.active) {
+        console.log("Service worker active");
+      }
+    } catch (error) {
+      console.log("service worker installion failed");
+    }
   }
 }
-
-function registerServiceWorker() {
-  navigator.serviceWorker
-    .register("/sw.js")
-    .then(() => console.log("Service worker installed"))
-    .catch(() => console.log("Sevice Worker discarded"));
-}
-
-
